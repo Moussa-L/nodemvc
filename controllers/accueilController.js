@@ -1,11 +1,17 @@
 /*
-Ici le fichier accueilController.js contient la logique métier pour la page d'accueil de l'application NODE MVC.
-Il peut inclure des fonctions pour gérer les requêtes, interagir avec la base de données, etc.
+Controller de la page d'accueil
+Ce module contient les actions qui gèrent les requêtes vers la page d'accueil.
 */
 
+// Exportation du module de contrôleur pour le routeur d'accueil
 module.exports = {
-    // Exemple de fonction pour gérer une requête GET sur la page d'accueil
+
+    // Fonction appelée pour la requête GET sur la page d'accueil
     accueilView: (req, res) => {
-        res.render('accueil'); // Rendu de la vue 'accueil.ejs' pour la page d'accueil
+
+        // Rend la vue 'accueil.ejs' et envoie le HTML au client
+        res.render('accueil');
+
     }
+
 };

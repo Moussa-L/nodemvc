@@ -12,13 +12,13 @@ const server = http.createServer(app);
 // Définition du numéro de port sur lequel le serveur va écouter
 const numPort = 3008;
 
-/* Configuration du port dans l'application Express
-app.set('port', numPort);*/
-
-
+// Configuration du port dans l'application Express (optionnel)
+/* app.set('port', numPort); */
 
 // Démarrage du serveur : il écoute sur le port défini et affiche un message de confirmation
 server.listen(numPort, () => {
+
     // Message de confirmation dans la console indiquant que le serveur est opérationnel
     console.log("Le serveur est démarré sur le port ", numPort);
+
 });
