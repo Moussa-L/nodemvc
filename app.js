@@ -21,6 +21,8 @@ const accueilRoute = require("./routes/accueilRoute");
 // Importation des routes pour l'authentification
 const authRoute = require("./routes/authentificationRoute");
 
+const db = require("./models");
+
 // Création de l'application Express
 const app = express();
 
@@ -31,6 +33,14 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: true }));
+
+db.sequelize.sync({force: true}).then(() => {
+    console.log("La base de données est synchronisée.");
+}).catch((error) => {
+    console.error("Erreur lors de la synchronisation de la base de données : "+ error.message);
+});
 
 
 /* Configuration de la connexion à la base de données MySQL
@@ -43,7 +53,7 @@ app.use(expressMyConnection(mysql2, {
 }));
 */
 
-// Configuration des options de connexion à la base de données MySQL
+/* Configuration des options de connexion à la base de données MySQL
 const optionsConnection= {
     host: "localhost",                          // Hôte de la base de données
     user:"root",                                // Utilisateur MySQL
@@ -53,7 +63,7 @@ const optionsConnection= {
 };
 
 // Utilisation du middleware myConnection pour gérer les connexions à la base de données
-app.use(myConnection(mysql2, optionsConnection, "pool"));
+app.use(myConnection(mysql2, optionsConnection, "pool"));*/
 
 
 // Enregistrement des routes de la page d'accueil

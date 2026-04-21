@@ -18,5 +18,9 @@ router.get("/register", authController.registerView);
 // Route POST /register : traite les données d'inscription envoyées par le client
 router.post("/register", authController.registerUser);
 
+const userController = require("../controllers/userController");
+
+router.post("/register", userController.create);
+
 // Exportation du routeur pour l'inclure dans app.js
 module.exports = router;

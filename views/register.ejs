@@ -11,5 +11,29 @@
     <%- include ("navbar") -%>
     <!-- Titre de la page d'inscription -->
     <h1>Authentification</h1>
+    <!-- Formulaire d'inscription avec les champs nécessaires -->
+
+    <!-- la je crée un formulaire avec l'attribut action qui vas agire dans la partie serveur  -->
+    <form action="/register" method="post">
+        div <class="container"> 
+            <h3>S'enregistrer</h3>
+            <p>Veuillez completer tous les champs.</p>
+        </class>
+
+        <hr> <!-- Ligne de séparation horizontale -->
+        
+        <!-- zone de saisie pour l'email -->
+        <label for="email">Email</label>
+        <input type="text" name="email" required>
+
+        <!-- zone de saisie pour le mot de passe -->
+        <label for="motdepasse">Mot de passe</label>
+        <input type="password" name="motdepasse" id="motdepasse" required>
+
+        <!--je vais integrer un bouton de soumission-->
+        <button type="submit">S'enregistrer</button>
+    
+    </form>
+
 </body>
 </html>

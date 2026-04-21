@@ -3,7 +3,7 @@
 */
 
 
-const Sequelize = requize("sequelize");
+const Sequelize = require("sequelize");
 
 // ici je vais me connecter à la base de données MySQL en utilisant Sequelize
 const sequelize = new Sequelize 
