@@ -22,5 +22,9 @@ const userController = require("../controllers/userController");
 
 router.post("/register", userController.create);
 
+router.get("/users/:id", userController.findOne);
+
+router.get("/users", userController.findAll);
+
 // Exportation du routeur pour l'inclure dans app.js
 module.exports = router;

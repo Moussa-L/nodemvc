@@ -36,7 +36,7 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync({}).then(() => {
     console.log("La base de données est synchronisée.");
 }).catch((error) => {
     console.error("Erreur lors de la synchronisation de la base de données : "+ error.message);
